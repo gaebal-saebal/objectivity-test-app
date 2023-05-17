@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <Start />
+      <Start questionNumber={'001'} />
     </>
   );
 }
