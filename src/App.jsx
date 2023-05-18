@@ -14,18 +14,18 @@ function App() {
   const handleStepMinus = () => {
     setStep(step - 1);
   };
+  const handleSubmit = () => {
+    alert('제출했어요');
+  };
 
   return (
     <>
       <Header />
-      <button onClick={handleStepMinus}>스텝빼기</button>
-      <button onClick={handleStepPlus}>스텝늘리기</button>
-      <div>현재 단계 : {step}단계</div>
-      <Start step={step} />
-      <Test page={1} step={step} onClick={handleStepPlus} />
-      <Test page={2} step={step} onClick={handleStepPlus} />
-      <Test page={3} step={step} onClick={handleStepPlus} />
-      <Result />
+      <Start step={step} onClick={handleStepPlus} />
+      <Test page={1} step={step} handleStepPlus={handleStepPlus} handleStepMinus={handleStepMinus} />
+      <Test page={2} step={step} handleStepPlus={handleStepPlus} handleStepMinus={handleStepMinus} />
+      <Test page={3} step={step} handleStepPlus={handleStepPlus} handleStepMinus={handleStepMinus} handleSubmit={handleSubmit} />
+      {/* <Result /> */}
     </>
   );
 }

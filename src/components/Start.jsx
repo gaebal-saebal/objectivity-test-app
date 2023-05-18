@@ -1,7 +1,7 @@
 import { Button } from '@mui/material';
 import * as Q from '../../constants/';
 
-export const Start = (step) => {
+export const Start = ({ step, onClick }) => {
   return (
     <div className={step === 0 ? 'flex' : 'hidden'}>
       <div className='flex flex-col items-center h-[100%] '>
@@ -13,6 +13,7 @@ export const Start = (step) => {
             marginTop: '2rem',
             width: '100px',
           }}
+          onClick={onClick}
         >
           테스트 시작
         </Button>

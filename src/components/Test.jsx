@@ -2,7 +2,7 @@ import { Button } from '@mui/material';
 import { question001 } from '../../constants';
 import { Question } from './Question';
 
-export const Test = ({ page, step, onClick }) => {
+export const Test = ({ page, step, handleStepPlus, handleStepMinus, handleSubmit }) => {
   const idx = page * 3;
   const totalPage = Math.ceil(question001.questions.length / 3);
   const progress = Math.round(((page - 1) / totalPage) * 100);
@@ -25,11 +25,21 @@ export const Test = ({ page, step, onClick }) => {
             variant='contained'
             style={{
               marginTop: '2rem',
-              width: '85px',
+              width: '70px',
             }}
-            onClick={onClick}
+            onClick={handleStepMinus}
           >
-            {page === totalPage ? '결과보기' : '다음'}
+            {page === 1 ? '처음' : '이전'}
+          </Button>
+          <Button
+            variant='contained'
+            style={{
+              marginTop: '2rem',
+              width: '70px',
+            }}
+            onClick={page === totalPage ? handleSubmit : handleStepPlus}
+          >
+            {page === totalPage ? '제출' : '다음'}
           </Button>
         </div>
       </div>
