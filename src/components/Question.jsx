@@ -5,15 +5,6 @@ export const Question = ({ correctArr, setState, questionNo }) => {
     const tempArr = [...correctArr];
     e.target.value === 'true' ? (tempArr[e.target.name] = 1) : (tempArr[e.target.name] = 0);
     setState(tempArr);
-    // 그 해당 input을 클릭했을때 true면 +1 false면 그대로
-    // 선택지 true를 골랐는데 이후에 false를 클릭하면 -1
-    // 문제 정답지
-    // [0,0,0,0,0,0]
-
-    // 1. true를 클릭함
-    // arr[0] = 1
-    // 2. false를 클릭함
-    // arr[0] = 0
   };
 
   const questionNumber = questionNo - 1;
