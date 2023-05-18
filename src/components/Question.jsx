@@ -11,8 +11,16 @@ export const Question = ({ questionNo }) => {
       <div>
         {question001.questions[questionNumber].options.map((option, i) => {
           return (
-            <div key={i} value={option.answer}>
-              {option.name}
+            <div>
+              <input
+                type='radio'
+                key={i}
+                value={option.answer}
+                name={questionNumber}
+                id={`${questionNumber}-${i}`}
+              />
+              {/* 텍스트 클릭해도 체크될 수 있도록 하기 위해서 */}
+              <label htmlFor={`${questionNumber}-${i}`}>{option.name}</label>
             </div>
           );
         })}
