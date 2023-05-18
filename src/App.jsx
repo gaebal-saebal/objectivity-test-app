@@ -22,9 +22,31 @@ function App() {
     <>
       <Header />
       <Start step={step} onClick={handleStepPlus} />
-      <Test page={1} step={step} handleStepPlus={handleStepPlus} handleStepMinus={handleStepMinus} />
-      <Test page={2} step={step} handleStepPlus={handleStepPlus} handleStepMinus={handleStepMinus} />
-      <Test page={3} step={step} handleStepPlus={handleStepPlus} handleStepMinus={handleStepMinus} handleSubmit={handleSubmit} />
+      <Test
+        page={1}
+        step={step}
+        handleStepPlus={handleStepPlus}
+        handleStepMinus={handleStepMinus}
+      />
+      <Test
+        page={2}
+        step={step}
+        handleStepPlus={handleStepPlus}
+        handleStepMinus={handleStepMinus}
+      />
+      <Test
+        page={3}
+        step={step}
+        handleStepPlus={handleStepPlus}
+        handleStepMinus={handleStepMinus}
+      />
+      <Test
+        page={4}
+        step={step}
+        handleStepPlus={handleStepPlus}
+        handleStepMinus={handleStepMinus}
+        handleSubmit={handleSubmit}
+      />
       {/* <Result /> */}
     </>
   );
