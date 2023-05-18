@@ -9,7 +9,9 @@ function App() {
     <>
       <Header />
       <Start />
-      <Test />
+      <Test page={1} />
+      <Test page={2} />
+      <Test page={3} />
     </>
   );
 }

@@ -3,8 +3,7 @@
 // TODO: 이 response를 브라우저에 출력해주세요
 const question001 = {
   testName: '객관성 테스트',
-  description:
-    '나의 객관성이 얼마나 높은지 알려주는 객관성 테스트입니다. 각 문항마다 정답이라고 판단되는 것을 체크하시면 됩니다. 검사를 시작하시려면 시작 버튼을 눌러주세요.',
+  description: '나의 객관성이 얼마나 높은지 알려주는 객관성 테스트입니다. 각 문항마다 정답이라고 판단되는 것을 체크하시면 됩니다. 검사를 시작하시려면 시작 버튼을 눌러주세요.',
   questionExample:
     '한 상인이 상점 안의 전기불을 껐을 때 한 남자가 나타나 돈을 요구했다. 주인이 금전등록기를 열었다. 그는 금전등록기에 있던 것을 꺼냈고 남자는 재빨리 상점 밖으로 사라졌다. 한 경관에게 즉시 이 사실이 알려졌다.',
   questions: [
@@ -59,6 +58,15 @@ const question001 = {
       options: [
         { name: '그렇다', answer: false },
         { name: '맞을 수도 있고 틀릴 수도 있다', answer: true },
+        { name: '아니다', answer: false },
+      ],
+    },
+    {
+      questionNo: 7,
+      questionLabel: '금전등록기에서 꺼낸 것을 누가 가져갔는지는 밝혀지지 않았다.',
+      options: [
+        { name: '그렇다', answer: true },
+        { name: '맞을 수도 있고 틀릴 수도 있다', answer: false },
         { name: '아니다', answer: false },
       ],
     },
