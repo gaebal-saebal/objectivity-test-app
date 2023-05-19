@@ -87,8 +87,9 @@ function App() {
               />
             </>
           }
-        ></Route>
-        <Route path='/result' element={<Result />}></Route>
+        />
+        <Route path='/result/:id' element={<Result />} />
+        <Route path='*' element={<div>404 Error</div>} />
       </Routes>
       <div>정답지 : {correctArr}</div>
       <div>맞춘 갯수 : {correctAmount}</div>
