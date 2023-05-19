@@ -4,13 +4,15 @@ import { Start } from './components/Start';
 import { Test } from './components/Test';
 import Result from './pages/Result';
 import { question001 } from '../constants';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
 
 // 시작페이지, 문항 컴포넌트 나와야 되는 페이지
 function App() {
   const [step, setStep] = useState(0);
   const [correctArr, setCorrectArr] = useState([]);
   const [correctAmount, setCorrectAmount] = useState(0);
+
+  const navigate = useNavigate();
 
   const handleStepPlus = () => {
     setStep(step + 1);
@@ -19,7 +21,28 @@ function App() {
     setStep(step - 1);
   };
   const handleSubmit = () => {
-    alert('제출했어요');
+    // 0-20 : 0번 페이지
+    // 21-40 : 1번 페이지
+    // 41-60 : 2번 페이지
+    // 61-80 : 3번 페이지
+    // 81-100 : 4번 페이지
+    // (맞춘갯수 / 11) * 100 => 총점
+
+    let resultScore = Math.round((correctAmount / 11) * 100);
+    console.log(resultScore);
+    let id = '';
+    if (0 <= resultScore && resultScore <= 20) {
+      id = '0';
+    } else if (21 <= resultScore && resultScore <= 40) {
+      id = '1';
+    } else if (41 <= resultScore && resultScore <= 60) {
+      id = '2';
+    } else if (61 <= resultScore && resultScore <= 80) {
+      id = '3';
+    } else {
+      id = '4';
+    }
+    navigate(`/result/${id}`, { state: { value: `${resultScore}` } });
   };
 
   const getArr = () => {
@@ -44,7 +67,7 @@ function App() {
   }, [correctArr]);
 
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <Routes>
         <Route
@@ -95,7 +118,7 @@ function App() {
       <div>맞춘 갯수 : {correctAmount}</div>
 
       {/* <Result /> */}
-    </BrowserRouter>
+    </>
   );
 }
 
