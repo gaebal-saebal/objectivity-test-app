@@ -6,7 +6,10 @@ export const Test = ({
   page,
   step,
   correctArr,
-  setState,
+  setCorrectArr,
+  checkArr,
+  setCheckArr,
+  checkAmount,
   handleStepPlus,
   handleStepMinus,
   handleSubmit,
@@ -19,18 +22,36 @@ export const Test = ({
     <div className={step === page ? 'flex' : 'hidden'}>
       <div className='flex flex-col'>
         <div className='mb-3'>
-          {page}/{totalPage} (문항갯수/{question001.questions.length})
+          {page}/{totalPage} ({checkAmount}/{question001.questions.length})
         </div>
         <div className='w-[100%] h-2 bg-gray-200'>
           <div className='z-10 h-2 bg-blue-600' style={{ width: `${progress}%` }}></div>
         </div>
         <div className='p-3 mt-5 bg-gray-200'>{question001.questionExample}</div>
-        <Question correctArr={correctArr} setState={setState} questionNo={idx - 2} />
+        <Question
+          correctArr={correctArr}
+          setCorrectArr={setCorrectArr}
+          checkArr={checkArr}
+          setCheckArr={setCheckArr}
+          questionNo={idx - 2}
+        />
         {question001.questions[idx - 2] === undefined ? null : (
-          <Question correctArr={correctArr} setState={setState} questionNo={idx - 1} />
+          <Question
+            correctArr={correctArr}
+            setCorrectArr={setCorrectArr}
+            checkArr={checkArr}
+            setCheckArr={setCheckArr}
+            questionNo={idx - 1}
+          />
         )}
         {question001.questions[idx - 1] === undefined ? null : (
-          <Question correctArr={correctArr} setState={setState} questionNo={idx} />
+          <Question
+            correctArr={correctArr}
+            setCorrectArr={setCorrectArr}
+            checkArr={checkArr}
+            setCheckArr={setCheckArr}
+            questionNo={idx}
+          />
         )}
         <div>
           <Button
@@ -49,7 +70,7 @@ export const Test = ({
               marginTop: '2rem',
               width: '70px',
             }}
-            onClick={page === totalPage ? handleSubmit : handleStepPlus}
+            onClick={page === totalPage ? () => handleSubmit(page) : () => handleStepPlus(page)}
           >
             {page === totalPage ? '제출' : '다음'}
           </Button>

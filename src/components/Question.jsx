@@ -1,10 +1,14 @@
 import { question001 } from '../../constants';
 
-export const Question = ({ correctArr, setState, questionNo }) => {
+export const Question = ({ correctArr, setCorrectArr, checkArr, setCheckArr, questionNo }) => {
   const handleClick = (e) => {
     const tempArr = [...correctArr];
     e.target.value === 'true' ? (tempArr[e.target.name] = 1) : (tempArr[e.target.name] = 0);
-    setState(tempArr);
+    setCorrectArr(tempArr);
+
+    const tempArr2 = [...checkArr];
+    tempArr2[e.target.name] = 1;
+    setCheckArr(tempArr2);
   };
 
   const questionNumber = questionNo - 1;
