@@ -8,6 +8,18 @@
   }
 }
 
+@layer components {
+  .graybox {
+    padding: 1.5rem;
+    margin-top: 1.25rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+    background-color: rgb(229 231 235);
+    border-radius: 0.5rem;
+  }
+}
+
 #root {
   position: relative;
   width: 100%;
