@@ -4,9 +4,9 @@ import * as Q from '../../constants/';
 export const Start = ({ step, onClick }) => {
   return (
     <div className={step === 0 ? 'flex' : 'hidden'}>
-      <div className='flex flex-col items-center h-[100%] '>
-        <h1 className='text-3xl font-bold text-center'>{Q.question001.testName}</h1>
-        <div className='p-3 mt-5 bg-gray-200'>{Q.question001.description}</div>
+      <div className='flex flex-col items-center h-[100%] px-10'>
+        <h1 className='mb-16 text-3xl font-bold text-center'>{Q.question001.testName}</h1>
+        <div className='p-6 mt-5 mb-10 text-lg bg-gray-200'>{Q.question001.description}</div>
         <Button
           variant='contained'
           style={{
