@@ -10,7 +10,7 @@ export const Share = () => {
     }
   };
   return (
-    <div className='flex justify-end p-5'>
+    <div className='flex justify-end px-10 py-5'>
       <Button
         variant='contained'
         style={{
