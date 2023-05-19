@@ -37,24 +37,26 @@ const Result = () => {
   };
 
   return (
-    <div>
-      <div>당신의 객관성 수치는?</div>
-      <div>{params.id}%</div>
-      <div>{resultArr[id].imogi}</div>
-      <div>{resultArr[id].level}</div>
-      <div>{resultArr[id].summary}</div>
-      <div>
-        심리학에서 인간은 대부분 선택적 지각을 한다고 합니다. 선택적 지각은 자신이 접하는 객관적인
-        정보가 아무리 많아도 그중에 자신이 관심을 가지는 주관적인 정보만을 받아들이는것을 말합니다.
-        객관성 수치가 높을수록 정보를 객관적으로 바라보는 능력이 뛰어납니다.
+    <div className='px-10'>
+      <div className='font-bold'>당신의 객관성 수치는?</div>
+      <div className='text-5xl text-center mt-10'>{params.id}%</div>
+      <div className='text-center mt-5'>{resultArr[id].imogi}</div>
+      <div className='text-center mt-2 font-semibold'>({resultArr[id].level})</div>
+      <div className='graybox text-red-500 font-bold'>{resultArr[id].summary}</div>
+      <div className='flex flex-col items-center mb-14'>
+        <span>심리학에서 인간은 대부분 선택적 지각을 한다고 합니다. </span>
+        <span>선택적 지각은 자신이 접하는 객관적인 정보가 아무리 많아도</span>
+        <span>그중에 자신이 관심을 가지는 주관적인 정보만을 받아들이는것을 말합니다.</span>
+        <span>객관성 수치가 높을수록 정보를 객관적으로 바라보는 능력이 뛰어납니다.</span>
       </div>
-
-      <Button variant='outlined'>
-        <a href='/'>테스트 다시하기</a>
-      </Button>
-      <Button variant='outlined' onClick={handleShare}>
-        결과 공유하기
-      </Button>
+      <div className='flex justify-center'>
+        <Button variant='outlined' style={{ marginRight: '0.5rem' }}>
+          <a href='/'>테스트 다시하기</a>
+        </Button>
+        <Button variant='outlined' onClick={handleShare}>
+          결과 공유하기
+        </Button>
+      </div>
     </div>
   );
 };
