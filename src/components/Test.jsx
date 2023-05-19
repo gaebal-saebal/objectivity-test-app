@@ -20,14 +20,22 @@ export const Test = ({
 
   return (
     <div className={step === page ? 'flex' : 'hidden'}>
-      <div className='flex flex-col'>
-        <div className='mb-3'>
-          {page}/{totalPage} ({checkAmount}/{question001.questions.length})
+      <div className='flex flex-col px-10 mb-16'>
+        <div className='flex justify-end mb-3'>
+          <span className='font-bold'>{`${page}/${totalPage} `}</span>
+          Page
+          <span className='ml-10 font-bold'>
+            {`${checkAmount}/${question001.questions.length} `}
+          </span>
+          문항
         </div>
-        <div className='w-[100%] h-2 bg-gray-200'>
-          <div className='z-10 h-2 bg-blue-600' style={{ width: `${progress}%` }}></div>
+        <div className='w-[100%] h-2 bg-gray-200 rounded-lg'>
+          <div
+            className='z-10 h-2 bg-orange-500 rounded-lg'
+            style={{ width: `${progress}%` }}
+          ></div>
         </div>
-        <div className='p-3 mt-5 bg-gray-200'>{question001.questionExample}</div>
+        <div className='graybox'>{question001.questionExample}</div>
         <Question
           correctArr={correctArr}
           setCorrectArr={setCorrectArr}
@@ -53,11 +61,12 @@ export const Test = ({
             questionNo={idx}
           />
         )}
-        <div>
+        <div className='flex justify-center'>
           <Button
             variant='contained'
             style={{
               marginTop: '2rem',
+              marginRight: '0.5rem',
               width: '70px',
             }}
             onClick={handleStepMinus}
