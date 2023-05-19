@@ -1,16 +1,25 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import resultArr from '../../constants/result';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
+
+//TODO : 총 점수내서 해당되는 결과 페이지로 보내주기
+//TODO : 체크한 문항은 실시간으로 갯수 업데이트해주기
+//TODO : 체크 안해도 다음 페이지로 넘어가는거 막기
+//TODO : 버튼 공유하기 만들기(클립보드 복사 - 메인페이지)
+//TODO : 결과페이지는 테스트 결과 공유하기로..!
 
 const Result = () => {
   let params = useParams();
   const id = params.id;
 
+  const location = useLocation();
+  const score = location.state.value;
+
   return (
     <div>
       <div>당신의 객관성 수치는?</div>
-      <div>수치</div>
+      <div>{score}%</div>
       <div>{resultArr[id].imogi}</div>
       <div>{resultArr[id].level}</div>
       <div>{resultArr[id].summary}</div>
