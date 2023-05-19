@@ -2,9 +2,11 @@ import { Share } from './Share';
 
 export const Header = () => {
   return (
-    <div>
-      <div>개발새발</div>
+    <>
+      <div className='p-5 bg-gray-300'>
+        <img className='w-8' src='/gaesae.png' alt='logo' />
+      </div>
       <Share />
-    </div>
+    </>
   );
 };
