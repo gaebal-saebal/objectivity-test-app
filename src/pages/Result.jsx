@@ -1,13 +1,13 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import resultArr from '../../constants/result';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 
-//TODO : 총 점수내서 해당되는 결과 페이지로 보내주기
+//TODO : 총 점수내서 해당되는 결과 페이지로 보내주기 -> ok
 //TODO : 체크한 문항은 실시간으로 갯수 업데이트해주기
 //TODO : 체크 안해도 다음 페이지로 넘어가는거 막기
 //TODO : 버튼 공유하기 만들기(클립보드 복사 - 메인페이지)
-//TODO : 결과페이지는 테스트 결과 공유하기로..!
+//TODO : 결과페이지는 테스트 결과 공유하기로..! -> ok
 
 const Result = () => {
   let params = useParams();
@@ -23,6 +23,17 @@ const Result = () => {
   } else {
     id = '4';
   }
+  const location = useLocation();
+  console.log(location);
+
+  const handleShare = async () => {
+    try {
+      await navigator.clipboard.writeText(``);
+      alert('클립보드에 복사됐어요!');
+    } catch (e) {
+      alert('클립보드 복사가 실패했어요.');
+    }
+  };
 
   return (
     <div>
