@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import resultArr from '../../constants/result';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 //TODO : 총 점수내서 해당되는 결과 페이지로 보내주기
 //TODO : 체크한 문항은 실시간으로 갯수 업데이트해주기
@@ -11,15 +11,23 @@ import { useParams, useLocation } from 'react-router-dom';
 
 const Result = () => {
   let params = useParams();
-  const id = params.id;
-
-  const location = useLocation();
-  const score = location.state.value;
+  let id = '';
+  if (0 <= params.id && params.id <= 20) {
+    id = '0';
+  } else if (21 <= params.id && params.id <= 40) {
+    id = '1';
+  } else if (41 <= params.id && params.id <= 60) {
+    id = '2';
+  } else if (61 <= params.id && params.id <= 80) {
+    id = '3';
+  } else {
+    id = '4';
+  }
 
   return (
     <div>
       <div>당신의 객관성 수치는?</div>
-      <div>{score}%</div>
+      <div>{params.id}%</div>
       <div>{resultArr[id].imogi}</div>
       <div>{resultArr[id].level}</div>
       <div>{resultArr[id].summary}</div>
