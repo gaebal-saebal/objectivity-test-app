@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from '@mui/material';
 import resultArr from '../../constants/result';
-import { useParams, useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 //TODO : 총 점수내서 해당되는 결과 페이지로 보내주기 -> ok
 //TODO : 체크한 문항은 실시간으로 갯수 업데이트해주기
@@ -23,12 +23,12 @@ const Result = () => {
   } else {
     id = '4';
   }
-  const location = useLocation();
-  console.log(location);
 
   const handleShare = async () => {
     try {
-      await navigator.clipboard.writeText(``);
+      await navigator.clipboard.writeText(
+        `https://gaebal-saebal-objectivitytest.netlify.app/result/${params.id}`
+      );
       alert('클립보드에 복사됐어요!');
     } catch (e) {
       alert('클립보드 복사가 실패했어요.');
@@ -48,7 +48,9 @@ const Result = () => {
         객관성 수치가 높을수록 정보를 객관적으로 바라보는 능력이 뛰어납니다.
       </div>
       <Button variant='outlined'>테스트 다시하기</Button>
-      <Button variant='outlined'>결과 공유하기</Button>
+      <Button variant='outlined' onClick={handleShare}>
+        결과 공유하기
+      </Button>
     </div>
   );
 };
