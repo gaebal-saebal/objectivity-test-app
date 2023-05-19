@@ -9,11 +9,15 @@
 }
 
 #root {
+  position: relative;
   width: 100%;
   height: 100%;
   max-width: 768px;
   background-color: white;
   overflow: scroll;
+}
+#root::-webkit-scrollbar {
+  display: none;
 }
 
 body {
@@ -21,5 +25,17 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  background-color: beige;
+  background-image: url('gaesae.png');
+  background-repeat: repeat;
+  background-size: 14%;
+}
+body::before {
+  content: '';
+  opacity: 0.2;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #000;
 }
