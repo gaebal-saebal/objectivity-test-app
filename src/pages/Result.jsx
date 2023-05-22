@@ -51,10 +51,17 @@ const Result = ({ handleOpen, setModalTitle, setModalContent }) => {
         <span>객관성 수치가 높을수록 정보를 객관적으로 바라보는 능력이 뛰어납니다.</span>
       </div>
       <div className='flex justify-center'>
-        <Button variant='outlined' style={{ marginRight: '0.5rem' }}>
+        <Button
+          variant='outlined'
+          style={{ marginRight: '0.5rem', border: '1px solid #7c43f8', color: '#7c43f8' }}
+        >
           <a href='/'>테스트 다시하기</a>
         </Button>
-        <Button variant='outlined' onClick={handleShare}>
+        <Button
+          variant='outlined'
+          onClick={handleShare}
+          style={{ border: '1px solid #7c43f8', color: '#7c43f8' }}
+        >
           결과 공유하기
         </Button>
       </div>

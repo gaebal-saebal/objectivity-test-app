@@ -20,6 +20,7 @@ export const Share = ({ handleOpen, setModalTitle, setModalContent }) => {
         style={{
           marginTop: '2rem',
           width: '85px',
+          backgroundColor: '#d4c0ff',
         }}
         onClick={handleShare}
       >

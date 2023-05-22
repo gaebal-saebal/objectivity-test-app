@@ -68,6 +68,7 @@ export const Test = ({
               marginTop: '2rem',
               marginRight: '0.5rem',
               width: '70px',
+              backgroundColor: '#d4c0ff',
             }}
             onClick={handleStepMinus}
           >
@@ -78,6 +79,7 @@ export const Test = ({
             style={{
               marginTop: '2rem',
               width: '70px',
+              backgroundColor: '#d4c0ff',
             }}
             onClick={page === totalPage ? () => handleSubmit(page) : () => handleStepPlus(page)}
           >

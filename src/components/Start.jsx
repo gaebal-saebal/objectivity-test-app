@@ -12,6 +12,7 @@ export const Start = ({ step, onClick }) => {
           style={{
             marginTop: '2rem',
             width: '100px',
+            backgroundColor: '#d4c0ff',
           }}
           onClick={onClick}
         >
