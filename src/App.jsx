@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Header } from './components/Header';
 import { Start } from './components/Start';
 import { Test } from './components/Test';
+import Footer from './components/Footer';
 import Result from './pages/Result';
 import { question001 } from '../constants';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import BasicModal from './components/Modal';
 
 // 시작페이지, 문항 컴포넌트 나와야 되는 페이지
 function App() {
@@ -13,8 +15,14 @@ function App() {
   const [correctAmount, setCorrectAmount] = useState(0);
   const [checkArr, setCheckArr] = useState([]);
   const [checkAmount, setCheckAmount] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalTitle, setModalTitle] = useState('');
+  const [modalContent, setModalContent] = useState('');
 
   const navigate = useNavigate();
+
+  const handleOpen = () => setModalOpen(true);
+  const handleClose = () => setModalOpen(false);
 
   const handleStart = () => {
     setStep(step + 1);
@@ -89,7 +97,17 @@ function App() {
 
   return (
     <>
-      <Header />
+      <BasicModal
+        modalOpen={modalOpen}
+        handleClose={handleClose}
+        modalTitle={modalTitle}
+        modalContent={modalContent}
+      />
+      <Header
+        handleOpen={handleOpen}
+        setModalTitle={setModalTitle}
+        setModalContent={setModalContent}
+      />
       <Routes>
         <Route
           path='/'
@@ -147,6 +165,7 @@ function App() {
         <Route path='/result/:id' element={<Result />} />
         <Route path='*' element={<div>404 Error</div>} />
       </Routes>
+      <Footer />
     </>
   );
 }

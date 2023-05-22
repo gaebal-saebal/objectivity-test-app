@@ -1,12 +1,16 @@
 import { Button } from '@mui/material';
 
-export const Share = () => {
+export const Share = ({ handleOpen, setModalTitle, setModalContent }) => {
   const handleShare = async () => {
     try {
       await navigator.clipboard.writeText(`https://gaebal-saebal-objectivitytest.netlify.app`);
-      alert('클립보드에 복사됐어요!');
+      setModalTitle('알림');
+      setModalContent('복사 성공! 원하시는 곳에 붙여넣어주세요.');
+      handleOpen(true);
     } catch (e) {
-      alert('클립보드 복사가 실패했어요.');
+      setModalTitle('오류');
+      setModalContent('브라우저의 클립보드 접근 권한을 설정해주시거나 관리자에게 문의해주세요.');
+      handleOpen(true);
     }
   };
   return (
