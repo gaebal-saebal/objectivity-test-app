@@ -41,6 +41,9 @@
 
 <a href="https://gaebal-saebal-objectivitytest.netlify.app/">Deployment</a>
 <br>
+<a href="https://testharo.com/objectivity/ko">참고 사이트</a>
+<br>
+<a href="https://www.funshop.co.kr/goods/detail/61273">로고 이미지</a>
 
 ## 라이센스
 
