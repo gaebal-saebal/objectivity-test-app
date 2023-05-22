@@ -39,9 +39,7 @@
 
 ## LINKS
 
-<a href="#" target="_blank">Figma</a>
-<br>
-<a href="#" target="_blank">Deployment</a>
+<a href="https://gaebal-saebal-objectivitytest.netlify.app/">Deployment</a>
 <br>
 
 ## 라이센스
