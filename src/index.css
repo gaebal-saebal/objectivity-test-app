@@ -38,7 +38,7 @@ body {
   height: 100vh;
   display: flex;
   justify-content: center;
-  background-image: url('gaesae.png');
+  background: url('../public/gaesae.png');
   background-repeat: repeat;
   background-size: 14%;
 }
