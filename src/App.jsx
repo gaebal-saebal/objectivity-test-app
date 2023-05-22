@@ -40,9 +40,10 @@ function App() {
     if (result === tempArr.length) {
       setStep(step + 1);
     } else {
-      alert('모든 문항을 체크해 주세요');
+      handleOpen();
+      setModalTitle('알림');
+      setModalContent('모든 문항을 체크해 주세요.');
     }
-    // 안됐으면 alert 띄우고 막고
   };
   const handleStepMinus = () => {
     setStep(step - 1);
@@ -61,7 +62,9 @@ function App() {
     if (result === tempArr.length) {
       navigate(`/result/${resultScore}`);
     } else {
-      alert('모든 문항을 체크해 주세요');
+      handleOpen();
+      setModalTitle('알림');
+      setModalContent('모든 문항을 체크해 주세요.');
     }
   };
 
@@ -162,7 +165,16 @@ function App() {
             </>
           }
         />
-        <Route path='/result/:id' element={<Result />} />
+        <Route
+          path='/result/:id'
+          element={
+            <Result
+              handleOpen={handleOpen}
+              setModalTitle={setModalTitle}
+              setModalContent={setModalContent}
+            />
+          }
+        />
         <Route path='*' element={<div>404 Error</div>} />
       </Routes>
       <Footer />

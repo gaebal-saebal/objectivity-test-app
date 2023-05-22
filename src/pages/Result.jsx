@@ -3,14 +3,11 @@ import { Button } from '@mui/material';
 import resultArr from '../../constants/result';
 import { useParams } from 'react-router-dom';
 
-//TODO : 총 점수내서 해당되는 결과 페이지로 보내주기 -> ok
-//TODO : 체크한 문항은 실시간으로 갯수 업데이트해주기
-//TODO : 체크 안해도 다음 페이지로 넘어가는거 막기
-//TODO : 버튼 공유하기 만들기(클립보드 복사 - 메인페이지) -> ok
-//TODO : 결과페이지는 테스트 결과 공유하기로..! -> ok
-//TODO : 테스트다시하기 버튼 만들기 -> ok
+//TODO : 배포 페이지는 결과 공유가 안됨 Not found
+//TODO : 배포 페이지는 백그라운드 이미지 적용 안됨
+//TODO : 선택지 버튼 효과 줘야 됨
 
-const Result = () => {
+const Result = ({ handleOpen, setModalTitle, setModalContent }) => {
   let params = useParams();
   let id = '';
   if (0 <= params.id && params.id <= 20) {
@@ -30,9 +27,13 @@ const Result = () => {
       await navigator.clipboard.writeText(
         `https://gaebal-saebal-objectivitytest.netlify.app/result/${params.id}`
       );
-      alert('클립보드에 복사됐어요!');
+      setModalTitle('알림');
+      setModalContent('복사 성공! 원하시는 곳에 붙여넣어주세요.');
+      handleOpen(true);
     } catch (e) {
-      alert('클립보드 복사가 실패했어요.');
+      setModalTitle('오류');
+      setModalContent('브라우저의 클립보드 접근 권한을 설정해주시거나 관리자에게 문의해주세요.');
+      handleOpen(true);
     }
   };
 
