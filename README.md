@@ -1,8 +1,7 @@
 # OBJECTIVITY TEST APP by Gaebal-Saebal
 
 <p align="center">
-![ezgif com-video-to-gif](https://github.com/gaebal-saebal/objectivity-test-app/assets/103746767/aeef6fe8-2f90-403a-b030-60edfccb7aa1)
-
+<img src="https://github.com/gaebal-saebal/objectivity-test-app/assets/103746767/aeef6fe8-2f90-403a-b030-60edfccb7aa1)](https://im2.ezgif.com/tmp/ezgif-2-09a641a807.gif" />
 </p>
 
 ---
