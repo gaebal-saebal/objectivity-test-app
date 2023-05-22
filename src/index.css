@@ -27,6 +27,7 @@
   max-width: 768px;
   background-color: white;
   overflow: scroll;
+  outline: 3px solid black;
 }
 #root::-webkit-scrollbar {
   display: none;
