@@ -3,10 +3,6 @@ import { Button } from '@mui/material';
 import resultArr from '../../constants/result';
 import { useParams } from 'react-router-dom';
 
-//TODO : 배포 페이지는 결과 공유가 안됨 Not found
-//TODO : 배포 페이지는 백그라운드 이미지 적용 안됨
-//TODO : 선택지 버튼 효과 줘야 됨
-
 const Result = ({ handleOpen, setModalTitle, setModalContent }) => {
   let params = useParams();
   let id = '';
@@ -40,10 +36,10 @@ const Result = ({ handleOpen, setModalTitle, setModalContent }) => {
   return (
     <div className='px-10'>
       <div className='font-bold'>당신의 객관성 수치는?</div>
-      <div className='text-5xl text-center mt-10'>{params.id}%</div>
-      <div className='text-center mt-5'>{resultArr[id].imogi}</div>
-      <div className='text-center mt-2 font-semibold'>({resultArr[id].level})</div>
-      <div className='graybox text-red-500 font-bold'>{resultArr[id].summary}</div>
+      <div className='mt-10 text-5xl text-center'>{params.id}%</div>
+      <div className='mt-5 text-center'>{resultArr[id].imogi}</div>
+      <div className='mt-2 font-semibold text-center'>({resultArr[id].level})</div>
+      <div className='font-bold text-red-500 graybox'>{resultArr[id].summary}</div>
       <div className='flex flex-col items-center mb-14'>
         <span>심리학에서 인간은 대부분 선택적 지각을 한다고 합니다. </span>
         <span>선택적 지각은 자신이 접하는 객관적인 정보가 아무리 많아도</span>
